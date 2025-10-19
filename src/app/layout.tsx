@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div style={{ padding: "1rem", backgroundColor: "red" }}>
           <p>Root layout</p>
+          <Link href={"/"}>Home</Link>
           <div style={{ backgroundColor: "white" }}>{children}</div>
         </div>
       </body>
