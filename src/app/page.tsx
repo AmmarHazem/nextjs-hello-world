@@ -13,6 +13,7 @@ import {
 } from "@xyflow/react";
 import { useCallback, useState } from "react";
 import "@xyflow/react/dist/style.css";
+import Link from "next/link";
 
 interface NodeModel {
   id: string;
@@ -49,6 +50,8 @@ export default function HomePage() {
   return (
     <>
       <h1>Welcome Home</h1>
+      <Link href={"blog"}>Blog</Link>
+      <Link href={"/products"}>Products</Link>
       <div style={{ width: "100%  ", height: "600px", border: "1px solid green" }}>
         <ReactFlow
           nodes={nodes}
