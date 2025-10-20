@@ -51,7 +51,13 @@ export default function HomePage() {
     <>
       <h1>Welcome Home</h1>
       <Link href={"blog"}>Blog</Link>
+      <br />
       <Link href={"/products"}>Products</Link>
+      <br />
+      <Link href={"/articles/breaking-news-123?lang=en"}>Read in English</Link>
+      <br />
+      <Link href={"/articles/breaking-news-123?lang=ar"}>Read in Arabic</Link>
+      <br />
       <div style={{ width: "100%  ", height: "600px", border: "1px solid green" }}>
         <ReactFlow
           nodes={nodes}
