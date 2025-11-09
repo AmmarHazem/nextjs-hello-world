@@ -1,12 +1,22 @@
 "use client";
-import { FC } from "react";
+import { useRouter } from "next/navigation";
+import { FC, startTransition } from "react";
 
-const ErrorBoundary: FC = (props: any) => {
+const ErrorBoundary: FC<{ error: Error; reset: () => void }> = (props) => {
   console.log("---- error boundary", props);
+  const router = useRouter();
+
+  const handleReset = () => {
+    startTransition(() => {
+      router.refresh();
+      props.reset();
+    });
+  };
+
   return (
     <>
       <div>ErrorBoundary {props.error.message}</div>
-      <button onClick={props.reset}>reset</button>
+      <button onClick={handleReset}>reset</button>
     </>
   );
 };
